@@ -3,12 +3,7 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.externals.push('@prisma/client')
-    }
-    return config
-  },
+      // Removed Prisma externals for proper TypeScript resolution
   // Enable standalone output for Docker
   output: 'standalone',
 }
