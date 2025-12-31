@@ -10,12 +10,12 @@ export async function GET() {
     ])
     
     const totalRevenue = orders
-      .filter(o => o.status === 'completed')
-      .reduce((sum, o) => sum + Number(o.total), 0)
+      .filter((o: any) => o.status === 'completed')
+      .reduce((sum: number, o: any) => sum + Number(o.total), 0)
     
-    const pendingOrders = orders.filter(o => o.status === 'pending').length
-    const processingOrders = orders.filter(o => o.status === 'processing').length
-    const completedOrders = orders.filter(o => o.status === 'completed').length
+    const pendingOrders = orders.filter((o: any) => o.status === 'pending').length
+    const processingOrders = orders.filter((o: any) => o.status === 'processing').length
+    const completedOrders = orders.filter((o: any) => o.status === 'completed').length
     
     const stats = {
       totalRevenue,
