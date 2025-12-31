@@ -1,3 +1,5 @@
+'use client'
+
 import AdminLayout from '@/components/Layout/AdminLayout'
 import { Package, ShoppingBag, Users, TrendingUp, DollarSign, ArrowUp, ArrowDown } from 'lucide-react'
 

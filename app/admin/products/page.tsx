@@ -1,3 +1,5 @@
+'use client'
+
 import AdminLayout from '@/components/Layout/AdminLayout'
 import Link from 'next/link'
 import { Plus, Edit, Trash2, Search } from 'lucide-react'

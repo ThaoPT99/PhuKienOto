@@ -1,3 +1,5 @@
+'use client'
+
 import AdminLayout from '@/components/Layout/AdminLayout'
 import { Eye, Package, Truck, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
