@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Phụ Kiện Ô Tô - Độ Xe Chuyên Nghiệp',
+  title: 'Gnart Độ Nát Ô Tô - Độ Xe Chuyên Nghiệp',
   description: 'Phụ kiện và nội thất ô tô cao cấp dành cho người đam mê độ xe',
 }
 

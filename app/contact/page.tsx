@@ -42,7 +42,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-white mb-1">Email</div>
-                    <div className="text-dark-400">info@phukienoto.com</div>
+                    <div className="text-dark-400">info@gnartdonatoto.com</div>
                   </div>
                 </div>
                 

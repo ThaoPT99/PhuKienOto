@@ -19,7 +19,7 @@ export async function sendEmail(to: string, subject: string, html: string) {
     }
 
     const info = await transporter.sendMail({
-      from: `"Phụ Kiện Ô Tô" <${process.env.SMTP_USER}>`,
+      from: `"Gnart Độ Nát Ô Tô" <${process.env.SMTP_USER}>`,
       to,
       subject,
       html,
@@ -35,7 +35,7 @@ export async function sendEmail(to: string, subject: string, html: string) {
 export async function sendOrderConfirmation(order: any) {
   const html = `
     <h2>Xác Nhận Đơn Hàng #${order.orderNumber}</h2>
-    <p>Cảm ơn bạn đã đặt hàng tại Phụ Kiện Ô Tô!</p>
+    <p>Cảm ơn bạn đã đặt hàng tại Gnart Độ Nát Ô Tô!</p>
     <p><strong>Tổng tiền:</strong> ${order.total.toLocaleString('vi-VN')}₫</p>
     <p><strong>Trạng thái:</strong> ${order.status}</p>
   `

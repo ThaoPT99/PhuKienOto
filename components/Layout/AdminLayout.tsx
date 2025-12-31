@@ -32,7 +32,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               </div>
               <div>
                 <div className="text-lg font-display font-bold gradient-text">ADMIN</div>
-                <div className="text-xs text-dark-400">Phụ Kiện Ô Tô</div>
+                <div className="text-xs text-dark-400">Gnart Độ Nát Ô Tô</div>
               </div>
             </Link>
           </div>
