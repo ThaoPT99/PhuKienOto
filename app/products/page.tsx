@@ -63,9 +63,6 @@ const categoryColors: Record<string, string> = {
   'Hiệu Năng': 'from-neon-pink to-neon-blue',
 }
 
-// Force dynamic rendering to prevent timeout during build
-export const dynamic = 'force-dynamic'
-
 export default function ProductsPage() {
   return (
     <UserLayout>
