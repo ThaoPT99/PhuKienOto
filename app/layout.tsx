@@ -4,6 +4,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Gnart Độ Nát Ô Tô - Độ Xe Chuyên Nghiệp',
   description: 'Phụ kiện và nội thất ô tô cao cấp dành cho người đam mê độ xe',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
