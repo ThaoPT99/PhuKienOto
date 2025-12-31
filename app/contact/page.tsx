@@ -1,3 +1,5 @@
+'use client'
+
 import UserLayout from '@/components/Layout/UserLayout'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 

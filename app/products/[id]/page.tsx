@@ -1,3 +1,5 @@
+'use client'
+
 import UserLayout from '@/components/Layout/UserLayout'
 import { ShoppingCart, Star, Truck, Shield, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'

@@ -1,3 +1,5 @@
+'use client'
+
 import UserLayout from '@/components/Layout/UserLayout'
 import { Award, Users, Target, Heart } from 'lucide-react'
 
