@@ -1,3 +1,5 @@
+'use client'
+
 import UserLayout from '@/components/Layout/UserLayout'
 import Link from 'next/link'
 import { ShoppingCart, Star, Sparkles } from 'lucide-react'
