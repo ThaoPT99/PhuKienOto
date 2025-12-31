@@ -9,7 +9,7 @@
     "dev:start": "next dev",
     "lint": "next lint",
     "db:seed": "node scripts/seed.js",
-    "db:reset": "npx prisma migrate reset --force && npm run db:seed",
+    "db:reset": "npx prisma migrate reset --force && npm run db:seed"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
