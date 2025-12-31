@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  password      String
+  phone         String?
+  address       String?
+  role          String    @default("user") // "user" or "admin"
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  orders        Order[]
+}
+
+model Category {
+  id            String    @id @default(cuid())
+  name          String    @unique
+  slug          String    @unique
+  description   String?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  products      Product[]
+}
+
+model Product {
+  id              String    @id @default(cuid())
+  name            String
+  slug            String    @unique
+  description     String?   @default("")
+  shortDescription String?
+  price           Float
+  originalPrice   Float?
+  sku             String?   @unique
+  stock           Int       @default(0)
+  image           String?
+  images          String?   // JSON array of image URLs
+  categoryId      String
+  category        Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  rating          Float     @default(0)
+  reviews         Int       @default(0)
+  status          String    @default("active") // "active", "inactive", "out_of_stock"
+  featured        Boolean   @default(false)
+  features        String?   // JSON array
+  specifications  String?   // JSON object
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  orderItems      OrderItem[]
+}
+
+model Order {
+  id              String    @id @default(cuid())
+  orderNumber     String    @unique
+  userId          String?
+  user            User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  customerName    String
+  customerEmail   String
+  customerPhone   String
+  shippingAddress String
+  items           OrderItem[]
+  subtotal        Float
+  shipping        Float     @default(50000)
+  total           Float
+  status          String    @default("pending") // "pending", "processing", "completed", "cancelled"
+  paymentStatus   String    @default("pending") // "pending", "paid", "failed", "refunded"
+  paymentMethod   String    @default("cod") // "cod", "bank_transfer", "vnpay"
+  paymentId       String?
+  notes           String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model OrderItem {
+  id            String    @id @default(cuid())
+  orderId       String
+  order         Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId     String
+  product       Product   @relation(fields: [productId], references: [id])
+  productName   String
+  productImage  String?
+  price         Float
+  quantity      Int
+  createdAt     DateTime  @default(now())
+}
