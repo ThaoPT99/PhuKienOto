@@ -10,7 +10,7 @@
     "lint": "next lint",
     "db:seed": "node scripts/seed.js",
     "db:reset": "npx prisma migrate reset --force && npm run db:seed",
-    "postinstall": "prisma generate"
+    "postinstall": "rm -rf node_modules/.prisma && prisma generate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
